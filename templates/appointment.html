@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Set an Appoinment to See Dr. Elder{%endblock %}
+{% block meta_description %}Appointment{% endblock %}
+
+{% block content %}
+ <center>
+ 	<h1>Review Your Information:</h1>
+	<strong>Your Name: </strong>{{your_name}}<br/>
+	<strong>Phone: </strong>{{your_phone}}<br/>
+	<strong>Email: </strong>{{your_email}}<br/>
+	<strong>Address: </strong>{{your_address}}<br/>
+	<strong>When: </strong>{{your_schedule}}<br/>
+	<strong>Appointment Day: </strong>{{your_date}}<br/>
+	<strong>Your Message: </strong>{{your_message}}<br/>
+
+
+<br/><br/>
+<strong>Note: </strong> This appointment hasn't been set yet. We will contact you shortly via telephone to confirm your appointment.
+
+</center>
+<br/><br/><br/><br/>
+  <!-- ***** Contact Area End ***** -->
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
