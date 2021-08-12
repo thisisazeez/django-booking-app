@@ -10,19 +10,18 @@ def appointment(request):
         your_address  = request.POST['your-address']
         your_schedule  = request.POST['your-schedule']
         your_date  = request.POST['your-date']
-        # your_doctor  = request.POST['your-doctor']
+        your_doctor  = request.POST['your-doctor']
         your_message  = request.POST['your-message']
+		
+        
+        appointment = "Name: " + your_name + " Phone: " + your_phone + " Email: " + your_email + " Address: " + your_address + " Schedule: " + your_schedule + " Day: " + your_date + " Message: " + your_message + "Doctor:" + your_doctor
+        send_mail(
+            'Appointment Request',
+            appointment,
+			your_email,
 
-        # send_mail(
-        #     'Appointment Request',
-        #     your_name,
-        #     your_email,
-        #     # your_doctor,
-        #     your_message,
-        #     your_date,
-        #     your_schedule,
-        #     ['replymeback2@gmail.com']
-        # )
+            ['replymeback2@gmail.com']
+        )
 
         return render(request, 'appointment.html', {
             'your_name' : your_name,
@@ -31,7 +30,7 @@ def appointment(request):
             'your_address' : your_address,
             'your_schedule':your_schedule,
             'your_date' : your_date,
-            # 'your_doctor':your_doctor,
+            'your_doctor':your_doctor,
             'your_message':your_message
             })
 
