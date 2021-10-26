@@ -1,8 +1,17 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
+from .models import Days, Doctors, Time
 # Create your views here.
 
 def appointment(request):
+    days = Days.objects.all()
+    time = Time.objects.all()
+    doctor = Doctors.objects.all()
+    context = {
+        'days':days,
+        'time':time,
+        'doctor':doctor,
+    }
     if request.method == 'POST':
         your_name = request.POST['your-name']
         your_phone  = request.POST['your-phone']
@@ -20,7 +29,7 @@ def appointment(request):
             appointment,
 			your_email,
 
-            ['replymeback2@gmail.com']
+            ['abdoulazeezx@gmail.com']
         )
 
         return render(request, 'appointment.html', {
@@ -32,7 +41,7 @@ def appointment(request):
             'your_date' : your_date,
             'your_doctor':your_doctor,
             'your_message':your_message
-            })
+            }, context)
 
     else:
-        return render(request, 'home.html', {})
+        return render(request, 'home.html', {}, context)
