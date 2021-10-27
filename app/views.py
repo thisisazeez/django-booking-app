@@ -41,7 +41,7 @@ def appointment(request):
             'your_date' : your_date,
             'your_doctor':your_doctor,
             'your_message':your_message
-            }, context)
+            })
 
     else:
-        return render(request, 'home.html', {}, context)
+        return render(request, 'home.html', context)
