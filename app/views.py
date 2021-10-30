@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
 from .models import Days, Doctors, Time
-# Create your views here.
+
 
 def appointment(request):
     days = Days.objects.all()

@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+# All models are new!
 class Days(models.Model):
     day = models.TextField(max_length=255, blank=True, null=True)
     
